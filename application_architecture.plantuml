@@ -1,0 +1,38 @@
+@startuml
+title Application Architecture
+node "Proxy" {
+    [traefik:v2.4] as proxy
+}
+
+package "external" {
+    [Client] as client
+        note right of client
+        javascript, nuxt.js
+        end note
+
+    [API Server] as api_server
+        note left of api_server
+        ASP.NET Core 3.1
+        end note
+
+}
+package "Internal" {
+    [Track Record] as track_record
+    note left of track_record
+    .NET Core 3.1
+    end note
+    note left of track_record #aqua
+    Data is collected and processed to calculate the top percentage.
+    end note
+
+    database "mariadb" as database {
+
+    }
+
+
+}
+proxy --> client
+proxy --> api_server
+api_server <--> database
+track_record -> database
+@enduml
