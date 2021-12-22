@@ -1,4 +1,9 @@
 # bazzi.gg architecture
+
+## Server Environment
++ using [portainer](https://www.portainer.io/)
++ docker swarm mode
+
 ## application architecture
 > PlantUML로 작성되었습니다.
   
