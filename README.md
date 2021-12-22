@@ -1,4 +1,4 @@
-# bazzi.gg 구조
+# bazzi.gg architecture
 ## application architecture
 > PlantUML로 작성되었습니다.
   
